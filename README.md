@@ -118,7 +118,7 @@ All tests use an in-memory database — no SQL Server connection needed.
 The GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push.
 It restores packages, builds the solution, and runs all unit tests.
 
-**CI/CD screenshot:** *(paste your green build screenshot here)*
+**CI/CD screenshot:** **
 
 ---
 
