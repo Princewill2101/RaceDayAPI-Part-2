@@ -1,0 +1,51 @@
+# This workflow checks that the /docs folder exists and contains the three
+# planning documents required for Part 1: the ERD, the API endpoint plan,
+# and the SQL database script. It runs automatically on every push.
+
+name: Validate Part 1 Docs
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  check-docs-folder:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Confirm /docs folder exists
+        run: |
+          if [ ! -d "docs" ]; then
+            echo "ERROR: /docs folder is missing."
+            exit 1
+          fi
+          echo "docs folder found."
+
+      - name: Confirm ERD file exists (PNG or PDF)
+        run: |
+          if ! ls docs/*.png docs/*.pdf 2>/dev/null | grep -qi erd; then
+            echo "ERROR: No ERD file (erd.png or erd.pdf) found in /docs."
+            exit 1
+          fi
+          echo "ERD file found."
+
+      - name: Confirm API endpoint plan exists (Markdown or PDF)
+        run: |
+          if ! ls docs/*endpoint* 2>/dev/null | grep -qE '\.md$|\.pdf$'; then
+            echo "ERROR: No API endpoint plan file found in /docs."
+            exit 1
+          fi
+          echo "API endpoint plan found."
+
+      - name: Confirm SQL script exists
+        run: |
+          if ! ls docs/*.sql 2>/dev/null | grep -q .; then
+            echo "ERROR: No .sql database script found in /docs."
+            exit 1
+          fi
+          echo "SQL script found."
