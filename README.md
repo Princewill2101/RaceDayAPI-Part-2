@@ -125,7 +125,7 @@ It restores packages, builds the solution, and runs all unit tests.
 
 ## Video walkthrough
 
-**YouTube (unlisted) link:** *(add your video link here)*
+**YouTube (unlisted) link:** *(https://youtu.be/I9QXVdWBt58)*
 
 ---
 
