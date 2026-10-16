@@ -131,4 +131,4 @@ It restores packages, builds the solution, and runs all unit tests.
 
 ## AI usage disclosure
 
-*(Note any AI tools used during this part, per the assignment requirement.)*
+*()*
