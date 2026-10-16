@@ -131,4 +131,4 @@ It restores packages, builds the solution, and runs all unit tests.
 
 ## AI usage disclosure
 
-*(I have used AI to help me debug my code and fix errors)*
+*(I have used AI to help me create a ci workflow by uploading my project and prompting it to generate a working ci workflow)*
